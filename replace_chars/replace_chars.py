@@ -11,9 +11,7 @@ new_lines = []
 
 def main():
     for root, dirs, files in os.walk(file_folder):
-        pbar_retrieve_file = tqdm.tqdm(files)
-        for current_file in pbar_retrieve_file:
-            pbar_retrieve_file.set_description("Récupération des fichiers")
+        for current_file in files:
             if current_file.endswith(file_extension):
                 file_list.append(os.path.join(root, current_file))
 
