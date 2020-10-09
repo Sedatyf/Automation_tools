@@ -12,10 +12,9 @@ def check_folder(path):
     """
     if os.path.exists(path):
         termcolor.cprint("Dossier trouvé !", "green")
-        return True
     else:
         termcolor.cprint("Dossier non trouvé !", "red")
-        return False
+        raise NotADirectoryError
 
 def classify_and_step(current_index, input_list, current_step, given_list, when_list, then_list):
     """Classify in the right state (aka: Given, When, Then) all And steps.
