@@ -104,7 +104,7 @@ def write_in_file(step_folder, given_list, when_list, then_list):
     for given_line in pbar_given:
         pbar_given.set_description("Ecriture des given")
         step_name = given_line.replace("\"", "\\\"")
-        function_name = given_line.replace(" ", "_").replace("\"", "").replace("\'","").replace(":", "")
+        function_name = given_line.replace(" ", "_").replace("\"", "").replace("\'","").replace(":", "").replace("/", "_")
         given_to_write = f"@Given(\"^{step_name}$\")\npublic void {function_name}(){{\n}}\n\n"
         f.write(given_to_write)
 
@@ -112,7 +112,7 @@ def write_in_file(step_folder, given_list, when_list, then_list):
     for when_line in pbar_when:
         pbar_when.set_description("Ecriture des when")
         step_name = when_line.replace("\"", "\\\"")
-        function_name = when_line.replace(" ", "_").replace("\"", "").replace("\'","").replace(":", "")
+        function_name = when_line.replace(" ", "_").replace("\"", "").replace("\'","").replace(":", "").replace("/", "_")
         when_to_write = f"@When(\"^{step_name}$\")\npublic void {function_name}(){{\n}}\n\n"
         f.write(when_to_write)
 
@@ -120,7 +120,7 @@ def write_in_file(step_folder, given_list, when_list, then_list):
     for then_line in pbar_then:
         step_name = then_line.replace("\"", "\\\"")
         pbar_then.set_description("Ecriture des then")
-        function_name = then_line.replace(" ", "_").replace("\"", "").replace("\'","").replace(":", "")
+        function_name = then_line.replace(" ", "_").replace("\"", "").replace("\'","").replace(":", "").replace("/", "_")
         then_to_write = f"@Then(\"^{step_name}$\")\npublic void {function_name}(){{\n}}\n\n"
         f.write(then_to_write)
     f.close()
