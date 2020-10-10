@@ -5,7 +5,7 @@ from cx_Freeze import setup, Executable
 # On appelle la fonction setup
 setup(
     name = "ba_helper",
-    version = "1.0.1",
+    version = "2.0.0",
     description = "Ce programme aide à l'autocomplétion avec le plugin Cucumber pour VSCode",
     executables = [Executable("app/app.py")],
 )
